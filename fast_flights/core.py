@@ -55,6 +55,9 @@ def get_flights_from_filter(
         "curr": currency,
     }
 
+    # Print the Google Flights URL for debugging
+    print("Google Flights URL:", "https://www.google.com/travel/flights?" + "&".join(f"{k}={v}" for k, v in params.items()))
+
     if mode in {"common", "fallback"}:
         try:
             res = fetch(params)
